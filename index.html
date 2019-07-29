@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Why_We_Eat</title>
+    <link href=Index1.css rel="stylesheet">
+    <script src="https://kit.fontawesome.com/49f2669a3a.js"></script>
+    <script src="login.js"></script>
+
+</head>
+<header id=container>
+    <a href="Index1.html"><img class="logo" src="images\logo.png"></a>
+    <a href="#">
+        <p id="myBtn"><b>Login</b></p>
+    </a>
+</header>
+
+<section class="headermenu">
+    <div id=container>
+        <ul class="menulist">
+            <a href="form1.html">
+                <li>Main Survey</li>
+            </a>
+            <a href="#">
+                <li>Food & Health</li>
+            </a>
+            <a href="#">
+                <li>Food Labels & You</li>
+            </a>
+            <a href="#">
+                <li>Fruits You Eat</li>
+            </a>
+            <a href="#">
+                <li>Consumption & Expenditure</li>
+            </a>
+            <a href="#">
+                <li>Veggies You Eat</li>
+            </a>
+        </ul>
+    </div>
+</section>
+
+<body>
+
+    <div id="container">
+        <div class="foodimage">
+            <img src="images\banner-img.png">
+        </div>
+        <div class="foodnote">
+            <p>An online survey on <span>food habits</span> of Indians by</p>
+            <p>Center for Science and Environment</p>
+
+        </div>
+    </div>
+    <div id="container">
+
+        <p class="instruct">Food, health and environment are strongly connected. What we eat, how we eat and the way it
+            is
+            produced affects our health and environment.But do we really know ? </p>
+
+
+    </div>
+    <div class="goodfood">
+        <div id="container">
+            <p>WHAT IS "GOOD" OR "BAD" FOOD ?</p>
+            <p>HOW DOES IT AFFECT OUR HEALTH ?<span> WHAT ARE ITS CONNECTIONS WITH THE ENVIRONMENT ?</span> </p>
+            <p>DO WE PLAY A ROLE IN CHOOSING OUR FOOD ?</p>
+            <p>OR IS IT CHOSEN FOR US ?</p>
+
+
+        </div>
+
+
+        <div class="flex-container">
+            <div><img src="images\food-1.png"></div>
+            <div>
+                <form action="form1.html">
+                <button  id="surveybutton" disabled>START SURVEY </button>
+            </form>
+            </div>
+            <div> <img src="images\food-2.png"></div>
+
+        </div>
+
+    </div>
+
+
+    <footer class="footer">
+        <!-- <p>@copyright 2016 by Center for Science and Environment. All Rights Reserved</p> -->
+        <div id="container">
+
+            <div class="copyright">
+                <p>@copyright 2016 by Center for Science and Environment. All Rights Reserved</p>
+            </div>
+            <div class="icons">
+                <i class="fab fa-twitter-square fa-3x" aria-hidden="true"></i>
+                <i class="fab fa-facebook fa-3x"></i>
+                <i class="fab fa-linkedin fa-3x"></i>
+                <i class="fab fa-google-plus-square  fa-3x"></i>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <body onload="print()">
+
+
+
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>CSE</p>
+                <form name="myform" method="GET">
+
+                    <input type="text" id="fname" name="fname" placeholder="Username">
+
+                    <input type="text" id="lname" name="lname" placeholder="Password">
+
+                </form>
+                <button class="btn" onclick="validate()"  id="login">Submit</button>
+
+
+            </div>
+
+            <span id="myText"></span>
+        </div>
+
+<!-- ---------------------------JAVA SCRIPT---------------------------------------- -->
+        <script>
+            function validate() {
+                var name = document.getElementById('fname').value;
+                var password = document.getElementById('lname').value;
+                var bt = document.getElementById('surveybutton');
+
+                if (name == "Sahiba" && password == "123") {
+                    // localStorage.setItem("name", name);
+                    bt.disabled = false;
+                    document.getElementById("myBtn").innerHTML=   name;
+                    modal.style.display = "none";
+                 
+                    
+                }
+                else {
+                    alert('Not Current USERNAME and Passwold');
+                }
+            }
+
+
+           
+            function print() {
+                var name = localStorage.getItem("name");
+
+                // alert(name);
+                // document.getElementById("myText").innerHTML = name;
+            }
+        </script>
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            var cl = document.get
+           
+            // When the user clicks the button, open the modal 
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+            
+        </script>
+
+        
+
+        
+
+
+
+
+
+
+
+
+
+</html>

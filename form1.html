@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SurveyForm</title>
+    <link href=Index1.css rel="stylesheet">
+    <script src="https://kit.fontawesome.com/49f2669a3a.js"></script>
+    <script src="login.js"></script>
+    <script
+     src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous">
+    </script>
+
+</head>
+<header id=container>
+        <a href="Index1.html"><img class="logo" src="images\logo.png"></a>
+    <a href="#">
+        <p id="myBtn"><b>Login</b></p>
+    </a>
+</header>
+
+<section class="headermenu">
+    <div id="container">
+        <ul class="menulist">
+            <a href="#">
+                <li>Main Survey</li>
+            </a>
+            <a href="#">
+                <li>Food & Health</li>
+            </a>
+            <a href="#">
+                <li>Food Labels & You</li>
+            </a>
+            <a href="#">
+                <li>Fruits You Eat</li>
+            </a>
+            <a href="#">
+                <li>Consumption & Expenditure</li>
+            </a>
+            <a href="#">
+                <li>Veggies You Eat</li>
+            </a>
+        </ul>
+    </div>
+</section>
+
+
+ 
+ 
+ 
+<body >
+
+
+        <div class="outmiddle">
+                <div class="outgreen">
+    
+                </div>
+                <div class="outgrey">
+                
+                </div>
+        </div>
+        <section class="middle">
+                <div id="container">
+                    <div class="green">
+                        <div class="img1">
+                            <img src="images/your-diet.png">
+                        </div>
+
+                        <div class="img2">
+                            <img src="images/male-active.png">
+
+                        </div>
+
+
+                        <div class="img2" id="male"  style="display: none;">
+                                <img src="images/male.png">
+                        </div>
+
+
+                        <div class="img2" id="female" style="display: none;">
+                                <img src="images/female.png">
+                        </div>
+         
+                    </div>
+
+
+
+                    <div class="detail">
+
+                            <p>Provide Your <span>Details</span></p>
+                            <form>
+                                    <input type="text" id="name" name="firstname" placeholder="NAME">
+                                    <input type="text" id="mobile" name="firstname" placeholder="MOBILE" maxlength="10">
+                                    <select id="age">
+                                        <option value="">AGE</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                    </select>
+                            
+                                     <label>GENDER: </label>
+                                     <input type="radio" name="gender" value="male"> Male
+                                    <input type="radio" name="gender" value="female"> Female
+                            
+                            
+                                    <select id="country">
+                                            <option value=''>SELECT YOUR COUNTRY</option>
+                                            <option value='Andorra'>Andorra</option>
+                                            <option value='United Arab Emirates'>United Arab Emirates</option>
+                                            <option value='Afghanistan'>Afghanistan</option>
+                                            <option value='Antigua And Barbuda'>Antigua And Barbuda</option>
+                                            <option value='Anguilla'>Anguilla</option>
+                                            <option value='Albania'>Albania</option>
+                                            <option value='Armenia'>Armenia</option>
+                                            <option value='Angola'>Angola</option>
+                                    </select>
+                            
+                                    <select id="state">
+                                            <option value="">SELECT YOUR STATE</option>
+                                            <option value="AK">Alaska</option>
+                                            <option value="AZ">Arizona</option>
+                                            <option value="AR">Arkansas</option>
+                                            <option value="CA">California</option>
+                                            <option value="CO">Colorado</option>
+                                    </select>
+                                    
+                            
+                                    <select id="city">
+                                            <option value="">SELECT YOUR CITY</option>
+                                            <option value="Delhi">Delhi</option>
+                                    </select>
+                            
+                            
+                                    <select id="household">
+                                            <option value="">HOUSEHOLD TYPE</option>
+                                            <option value="Rent">Rent</option>
+                                    </select>
+                            
+                                    
+                            
+                            
+                                    <button id="cont"><a >CONTINUE</a></button>       
+                            </form>
+                            
+                            </div>
+                            
+        
+                    
+         
+                </div>
+         
+        </section>
+
+
+
+        <footer class="footer">
+           
+                <div id="container">
+        
+                    <div class="copyright">
+                        <p>@copyright 2016 by Center for Science and Environment. All Rights Reserved</p>
+                    </div>
+                    <div class="icons">
+                        <i class="fab fa-twitter-square fa-3x" aria-hidden="true"></i>
+                        <i class="fab fa-facebook fa-3x"></i>
+                        <i class="fab fa-linkedin fa-3x"></i>
+                        <i class="fab fa-google-plus-square  fa-3x"></i>
+                    </div>
+                </div>
+            </footer> 
+
+
+
+</body>
+
+<!-- Form-Validation -->
+<script>
+        $(document).ready(function () {
+            document.getElementById('myBtn').innerHTML = 'Sahiba';
+            $('#cont').click(function () {
+                if ($('#name').val() == "") {
+                    alert("please enter username!");
+                }
+                else if ($('#mobile').val() == "") {
+                    alert("please enter mobile number!");
+                }
+                else if ($('#age').val() == "0") {
+                    alert("please enter your age!");
+                }
+                else if ($('input[name="gender"]:checked').length == 0)
+                {
+                    alert("please select  gender!");
+                }
+
+                             
+                else if ($('#country').val() == "") {
+                    alert("please select  country!");
+                }
+                
+                else if ($('#state').val() == "") {
+                    alert("please select  state!");
+                }
+                else if ($('#city').val() == "") {
+                    alert("please select  city!");
+                }
+                else if ($('#household').val() == "") {
+                    alert("please select  household type!");
+                }
+                else {
+                    var url = 'screen2.html';
+                    $('#cont>a').attr('href', url);
+                }
+                
+            });    
+            
+        });
+    </script>
+    <script type="text/javascript">
+        
+        $(function(){
+
+$('input[name=gender]').click(function(){
+var selectedVal =  $(this).val();
+    $('div.img2').css('display', 'none');
+
+if(selectedVal == 'male'){
+    $('#male').css('display', 'block');
+    $('#female').css('display', 'none');
+
+}else if(selectedVal == 'female'){
+    $('#female').css('display', 'block');
+    $('#male').css('display', 'none');
+
+}
+});
+
+
+
+
+})
+
+    
+    
+    
+    
+</script>
+
+
+
+
+
+
+</html>
